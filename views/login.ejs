@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <head>
+        <%- include('includes/head.ejs') %>   
+        <style>
+    .login-form{
+        width: 20rem;
+    max-width: 90%;
+    margin: auto;
+    display: block;
+    }
+
+    .form-control {
+  margin: 1rem 0;
+}
+
+.form-control label,
+.form-control input {
+  display: block;
+  width: 100%;
+  margin-bottom: 0.25rem;
+}
+
+.form-control input {
+  border: 1px solid #a1a1a1;
+  font: inherit;
+  border-radius: 2px;
+}
+
+    .btn{
+ display: inline-block;
+  padding: 0.25rem 1rem;
+  text-decoration: none;
+  font: inherit;
+  border: 1px solid #00695c;
+  color: #00695c;
+  background: white;
+  border-radius: 3px;
+  cursor: pointer;
+    }
+    .login-err{
+      text-align: center;
+      color: red;
+    }
+        </style>
+    </head>
+    <body>
+    <header class="main-header">
+        <%- include('includes/navigation.ejs') %>
+    </header>
+<div class="login-err">
+    <% if(errors){ %>
+      <p> <%=errors %></p>
+            <%}%>
+</div>
+    <div class="main-content">
+    <div>
+    <form class="login-form" action="/auth/login" method="post" >
+        <div class="form-control">       
+<label for="em">E-Mail</label>
+<input type="text" name="email" id="em">
+</div>
+            <div class="form-control">
+<label for="pas">Password</label>
+<input type="text" name="pass" id="pas">
+</div>
+
+<button class="btn" type="submit">Login</button>
+    </form>
+
+    </div>
+    </div>
+    <%- include('includes/footer.ejs') %>
+</body>
+</html>

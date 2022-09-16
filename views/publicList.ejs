@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('includes/head.ejs') %>
+    <style>
+      .card {
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+      }
+
+      .idea_item {
+        width: 20rem;
+        max-width: 95%;
+        margin: 1rem;
+      }
+
+      .idea_description {
+        text-align: center;
+      }
+
+      .idea_title {
+        font-size: 1.2rem;
+        text-align: center;
+      }
+
+      .card_header,
+      .card_content {
+        padding: 1rem;
+      }
+
+      .card_header h1,
+      .card_content h1,
+      .card_content h2,
+      .card_content p {
+        margin: 0;
+      }
+      .card_content p{
+        overflow: hidden;
+        display: -webkit-box;
+         -webkit-line-clamp: 8;
+         -webkit-box-orient: vertical;
+      }
+
+      .card_actions {
+        padding: 1rem;
+        text-align: center;
+      }
+
+      .btn {
+        display: inline-block;
+        padding: 0.25rem 1rem;
+        text-decoration: none;
+        font: inherit;
+        border: 1px solid #00695c;
+        color: #00695c;
+        background: white;
+        border-radius: 3px;
+        cursor: pointer;
+      }
+
+      .grid {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        align-items: stretch;
+      }
+      .login-err {
+        text-align: center;
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="main-header">
+      <%- include('includes/navigation.ejs') %>
+    </header>
+    <div class="login-err">
+      <% if(errors){ %>
+      <p><%=errors %></p>
+      <%}%>
+    </div>
+    <div class="main-content">
+      <div class="grid">
+        <% for(const idea of ideas){%>
+        <article class="card idea_item">
+          <header class="card_header">
+            <h1 class="idea_title"><%=idea.title%></h1>
+          </header>
+          <div class="card_content">
+            <p class="idea_description"><%=idea.description%></p>
+          </div>
+          <div class="card_actions">
+            <a href="/idea/details/<%=idea.id%>" class="btn">Details</a>
+            <% if (isAuth){ %>
+            <a href="/addFav/<%=idea.id%>" class="btn">Add to favorites</a>
+            <% } else {%>
+            <a href="/auth/login" class="btn">Add to favorites</a>
+            <%} %>
+          </div>
+        </article>
+        <% }%>
+      </div>
+    </div>
+    <%- include('includes/footer.ejs') %>
+  </body>
+</html>

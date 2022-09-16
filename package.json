@@ -1,0 +1,27 @@
+{
+  "name": "buiseness_idea",
+  "version": "1.0.0",
+  "description": "the list of the ideas",
+  "main": "app.js",
+  "engines": {
+    "node": "16.16.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "zsv",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.20.0",
+    "connect-flash": "^0.1.1",
+    "ejs": "^3.1.8",
+    "express": "^4.18.1",
+    "express-session": "^1.17.3",
+    "express-validator": "^5.3.0",
+    "jsonwebtoken": "^8.5.1",
+    "mysql2": "^1.6.1",
+    "pg": "^8.7.3",
+    "sequelize": "^5.0.0-beta.11"
+  }
+}

@@ -1,0 +1,25 @@
+<link rel="stylesheet"
+  href="https://fonts.googleapis.com/css?family=Montserrat">
+<nav class="header-nav">
+  <ul class="nav-list">
+    <li class="nav-li">
+      <a href="/public/list" style="font-family: 'Montserrat', serif; font-size:larger">M.B.I.</a>
+    </li>
+
+    <% if (isAuth){ %>
+    <li class="nav-li"><a href="/ideas">My ideas</a></li>
+    <li class="nav-li">
+      <a href="/favorites">My favorites</a>
+    </li>
+    <% } else {%> <% } %>
+  </ul>
+  <ul class="nav-list">
+    <% if (isAuth){ %>
+    <li class="nav-li"><a href="/auth/logout">Logout</a></li>
+    <% } else {%>
+    <li class="nav-li"><a href="/auth/login">Login</a></li>
+    <li class="nav-li"><a href="/auth/signup">SignUp</a></li>
+    <% } %>
+    <li class="nav-li"><a href="/about">About</a></li>
+  </ul>
+</nav>
