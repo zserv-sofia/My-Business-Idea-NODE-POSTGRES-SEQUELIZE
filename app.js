@@ -79,9 +79,9 @@ next()
 sequelize
   .sync()
   .then((result) => {
-    console.log("ser",process.env.DATABASE_URL)
-    console.log("ser",process.env.PORT)
+  
     app.listen(process.env.PORT ||3000);
+
   })
   .catch((err) => {
     console.log(err);

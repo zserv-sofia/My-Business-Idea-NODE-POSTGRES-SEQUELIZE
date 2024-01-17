@@ -65,7 +65,7 @@ exports.editedSave = (req, res, next) => {
       });
     });
 };
-// needs to delete from favorites as well
+
 exports.delete = (req, res, next) => {
   idea
     .findAll({ where: { id: req.params.id } })

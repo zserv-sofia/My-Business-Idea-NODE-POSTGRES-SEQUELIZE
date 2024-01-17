@@ -1,8 +1,5 @@
 const Sequelize = require("sequelize");
-//const sequelize = new Sequelize("sapp", "root", "Krasnoyarsk2012", {
-//dialect: "mysql",
-//host: "localhost",
-//});
+
 
 sequelize = new Sequelize(process.env.DATABASE_URL, {
   dialectOptions: {
